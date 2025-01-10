@@ -1,0 +1,15 @@
+<div class="card" *ngIf="user; else noUser">
+  <img class="card__avatar" (click)="copy()" [src]="user.picture.thumbnail" alt="image missing" loading="lazy">
+  <div class="card__info">
+    <div class="card__info__name">
+      {{ user.name.title }} {{ user.name.first }} {{ user.name.last }}
+    </div>
+    <div class="card__info__location">
+      {{ user.location.city }}
+    </div>
+  </div>
+</div>
+
+<ng-template #noUser>
+  no user found
+</ng-template>

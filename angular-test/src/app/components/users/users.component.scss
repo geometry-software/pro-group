@@ -1,0 +1,67 @@
+:host {
+    height: 100%;
+    display: block;
+    position: relative;
+}
+
+.grid {
+    min-height: calc(100vh - 60px);
+    animation: fadeInOnEnter 1s linear;
+}
+
+.loader {
+    top: 0;
+    position: sticky;
+    width: 100%;
+    height: 5px;
+    padding-bottom: 5px;
+}
+
+.paginator {
+    position: sticky;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+}
+
+@keyframes fadeInOnEnter {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+// better to use screen.orientation to avoid mistakes on phone with high resolution
+@media only screen and (max-width: 600px) {
+    .grid {
+        padding: 0 10px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .grid {
+        padding: 0 20px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .grid {
+        padding: 0 200px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .grid {
+        padding: 0 300px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .grid {
+        padding: 0 500px;
+    }
+}

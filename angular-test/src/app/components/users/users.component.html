@@ -1,0 +1,12 @@
+<div class="loader">
+  <mat-progress-bar *ngIf="(loading | async) === LoadingStatus.Loading" mode="indeterminate"></mat-progress-bar>
+</div>
+<ng-container *ngIf="users as data">
+  <div class="grid" [@listAnimation]="data.length">
+    <app-user [user]="item" *ngFor="let item of data; let i = index" />
+  </div>
+  <div class="paginator">
+    <mat-paginator (page)="handlePageEvent($event)" [pageSize]="data.length" [hidePageSize]="true" [length]="userAmount"
+      [pageIndex]="pageIndex | async" />
+  </div>
+</ng-container>
